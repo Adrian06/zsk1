@@ -26,4 +26,19 @@ console.log(poleProstokata);
 
 //Napisać program, który oblicza obwód, pole koła oraz objętość stożka. Dane użytkownik podaje z klawiatury. Wykorzystaj obiekt Math.Użytkownik wybiera w radio co chce obliczyć.
 
-function obliczenia
+        function poleKola(){
+            var r = document.getElementById('r').value;
+            var pole = Math.PI * (r * r);
+            document.getElementById('a').textContent = "Pole wynosi: " + pole;
+        }
+        function obwodKola(){
+            var r = document.getElementById('r').value;
+            var obwod = 2 * Math.PI * r;
+            document.getElementById('a').textContent = "Obwód wynosi: " + obwod;
+        }
+        function objetosc(){
+            var r = document.getElementById('r').value;
+            var h = document.getElementById('h').value;
+            var objetoscStozka = 1/3 * Math.PI * (r * r) * h;
+            document.getElementById('a').textContent = "Objetosc stozka wynosi: " + objetoscStozka;
+        }

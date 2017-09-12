@@ -51,3 +51,4 @@ console.log(sortujCyfryPrawidłowo);
 
 //zad. dom
 //Utwórz formularz z loginem(text) i hasłem(password). Zapisz dane w tablicy. Zapisz wynik w nagłówku drugiego stopnia. Użytkownik podaje również kolor w jakim ma być wszystko wyświetlone.
+

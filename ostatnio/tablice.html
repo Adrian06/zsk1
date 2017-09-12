@@ -10,6 +10,26 @@
     <div id="kolor">
 
     </div>
+    <form>
+        Login<input type="text" id="login"/>
+        <br />
+        Hasło<input type="password" id="password"/>
+        <br />
+        Kolor<input type="text" id="kolor"/>
+        <br />
+    </form>
+    <button onclick="dane();">Koniec</button>
+    <h2 id="wynik"></h2>
+    <script>
+        function dane(){
+        var login = document.getElementById("login").value;
+        var haslo = document.getElementById("password").value;
+        var kolor = document.getElementById("kolor").value;
+        var tablica = [login, haslo, kolor];
+        document.getElementById("wynik").style.color = tablica[2];
+        document.getElementById("wynik").textContent ="Login: " + tablica[0] +", Hasło: " + tablica[1];
+        }
+    </script>
     <script src="js/tablice.js"></script>
 </body>
 </html>
