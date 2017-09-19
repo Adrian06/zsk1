@@ -23,12 +23,12 @@
 }*/
 
 //**********WHILE*******
-
+/*
 var i = 0;
 while(i++ <5){
 	document.write(i + "<br>");
 
-}
+}*/
 
 //Użytkownik podaje z klawiatury wartość i pętla będzie się tak długo wykonywać dopóki x>=y
 
@@ -79,11 +79,11 @@ elPrzycisk.onclick = function(){
 
 //**********FOR EACH*********
 
-var tab = ['Anna' , 'Jacek' , 'Janusz' , 'Adrian'];
-/*for ( var i=0;i < tab.length; i++){
+/*var tab = ['Anna' , 'Jacek' , 'Janusz' , 'Adrian'];
+for ( var i=0;i < tab.length; i++){
 	document.write(tab[i] + ' ');
 }
-*/
+
 
 function p(a,b){
 	document.write(a+b+'<br>');
@@ -94,6 +94,24 @@ function pokaz(wartosc,index){
 	document.write(index+1+' - element tablicy wynosi: ');
 	document.write(wartosc + '<br>');
 }
-tab.forEach(pokaz);
+tab.forEach(pokaz);*/
 //zad.dom
 //Użytkownik podaje z klawiatury login i hasło(formularz), jeśli login to Filip, a hasło to Okoń@1234 to na ekranie wyświetli w kolorze czerwonym poprawne hasło. Jeśli hasło będzie błędne to w kolorze zielonym wyświetli się błędne hasło. Użytkownik ma 3 próby.
+
+var elLogin = document.getElementById('login');
+var elHaslo = document.getElementById('haslo');
+var elPrzycisk = document.getElementById('przycisk');
+
+elPrzycisk.onclick = function() {
+    if(elLogin.value == 'Filip' && elHaslo.value == 'Okoń@1234'){
+        document.getElementById('wynik').style.color = 'red';
+        document.getElementById('wynik').textContent = elHaslo.value;
+    }
+    else if(elLogin.value != 'Filip'){
+        document.getElementById('wynik').textContent = 'Podałeś niepoprawny login';
+    }
+    else if(elHaslo.value != 'Okoń@1234'){
+         document.getElementById('wynik').style.color = 'green';
+        document.getElementById('wynik').textContent = 'Niepoprawne hasło: ' + elHaslo.value;
+    }
+}
