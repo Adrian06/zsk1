@@ -81,3 +81,37 @@ else{
 	document.write(i + '<br />')
 }
 }*/
+
+//previousElementSibling, nextElementSibling
+
+var poczatekElement = document.getElementById('s2');
+var poprzedniElement = poczatekElement.previousElementSibling;
+var nastepnyElement = poczatekElement.nextElementSibling;
+
+poczatekElement.className = 'niebieski'
+poprzedniElement.className = 'niebieski'
+nastepnyElement.className = 'niebieski'
+
+//firstChild, lastChild
+
+var lista = document.getElementsByTagName('ul')[1];
+console.log(lista);
+
+var pierwszy = lista.firstElementChild;
+var ostatni = lista.lastElementChild;
+
+pierwszy.setAttribute('class','grey');
+ostatni.setAttribute('class','grey');
+
+//******************************************
+
+//Zmień pierwszy element input na button i przypisz wartość wyślij
+
+var pierwszyInput = document.querySelector('input');
+pierwszyInput.setAttribute('type','button');
+pierwszyInput.setAttribute('value','Wyślij');
+
+//tekst WWW łącze ze stroną ZSK
+
+var link = document.getElementById('link');
+link.setAttribute('href','http://www.zsk.poznan.pl');

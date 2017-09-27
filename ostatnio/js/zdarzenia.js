@@ -91,6 +91,64 @@ function blokujHaslo(){
     this.disabled = true;
 }
 
+function sprawdzRegulamin() {
+	if (elRegulamin.checked == true){
+		elPrzycisk.disabled = false;
+	}
+	else{
+		elPrzycisk.disabled = true;
+	}
+}
+
+function odblokuj(){
+	var zablokowane = document.getElementsByTagName('input');
+	if (zablokowane.length > 0){
+		for (var i=0; i < zablokowane.length; i++){
+			if (zablokowane[i].disabled){
+				zablokowane[i].disabled = false;
+			}
+		}
+		//console.log(zablokowane);
+	}
+}
+
+//odblokowanie ver.1.1
+
+function odblokuj1(){
+	var zablokowane = document.querySelectorAll('input[disabled]');
+	if (zablokowane.length > 0){
+		for (var i=0; i < zablokowane.length; i++){
+			if (zablokowane[i].disabled){
+				zablokowane[i].disabled = false;
+			}
+		}
+		//console.log(zablokowane);
+	}
+}
+
+function wyslij(){
+		var puste = false;
+		var input = document.querySelectorAll('input');
+	for (var i = 0; i<input.length; i++){
+			if (input[i].value == ''){
+				puste = true;
+				break;
+			}
+	}
+	if (puste){
+		elKomunikat.textContent = 'Wypełnij pola';
+	}
+	else{
+	document.write('<div>');
+	document.write('Imię: ' + elImie.value + '<br />');
+	document.write('Nazwisko: ' + elNazwisko.value + '<br />');
+	document.write('Login: ' + elLogin.value + '<br />');
+	document.write('Mail: ' + elMail1.value + '<br />');
+	document.write('Data urodzenia: ' + elData.value + '<br />');
+	document.write('</div>');
+	}
+}
+
 elImie.addEventListener('blur',sprawdz);
 elNazwisko.addEventListener('blur',sprawdz);
 elLogin.addEventListener('blur',sprawdz);
@@ -98,4 +156,8 @@ elMail2.addEventListener('blur',mail);
 elMail1.addEventListener('blur',blokuj);
 elPass2.addEventListener('blur',haslo);
 elPass1.addEventListener('blur',blokujHaslo);
+elRegulamin.addEventListener('change',sprawdzRegulamin);
+//elPopraw.addEventListener('click',odblokuj);
+elPopraw.addEventListener('click',odblokuj1);
+elPrzycisk.addEventListener('click',wyslij);
 
